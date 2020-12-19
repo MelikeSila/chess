@@ -1,7 +1,18 @@
+##################################################
+##################################################
+# The class is for establishing a chess game
+#
+##################################################
+##################################################
 class Board:
+    
     def __init__(self):
-            self.board_length = 800
-            self.pygame = None
+        self.board_length = 800
+        self.pygame = None
+
+    ##################################################
+    # Method for draw the chess board
+    ##################################################
     def DrawChessBoard(self, board_length = 800):
         
         import pygame
@@ -37,6 +48,9 @@ class Board:
             square_position1 = square_position1 + square_length
         self.pygame = pygame
     
+    ##################################################
+    # Method for run the established pygame
+    ##################################################
     def RunGame(self):
         from pygame.locals import QUIT
         import sys
