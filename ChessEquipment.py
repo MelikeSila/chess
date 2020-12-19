@@ -30,16 +30,16 @@ class Board:
 
 
         # create board squares
-        square_position1 = 0
-        square_position2 = 0
-        square_length = board_length/8
+        square_length = board_length/ (8 + 1)
+        square_position1 = square_length
+        square_position2 = square_length
         count = 0
         ########################################
         ###TODO draw the square names such as b1 a2 etc
         while square_position1 < (board_length):
-            square_position2 = 0
+            square_position2 = square_length
             if count%2 == 0:
-                square_position2 = square_length
+                square_position2 = square_length*2
             count = count + 1
             while square_position2 < (board_length):
                 pygame.draw.rect(ChessBoard, BLACK, 
