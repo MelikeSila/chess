@@ -1,17 +1,12 @@
 class Board:
     def __init__(self):
             self.board_length = 800
+            self.pygame = None
     def DrawChessBoard(self, board_length = 800):
+        
         import pygame
-        import sys
-        from pygame.locals import QUIT
 
         pygame.init()
-
-
-        # Assign FPS a value
-        fps = 30
-        FramePerSec = pygame.time.Clock()
 
         # Setting up color objects
         BLACK = (0, 0, 0)
@@ -23,7 +18,7 @@ class Board:
         pygame.display.set_caption("CHESS")
 
 
-        # create board frames
+        # create board squares
         square_position1 = 0
         square_position2 = 0
         square_length = board_length/8
@@ -40,8 +35,17 @@ class Board:
                                  border_bottom_left_radius=-1, border_bottom_right_radius=-1)
                 square_position2 = square_position2 + square_length*2
             square_position1 = square_position1 + square_length
-
-
+        self.pygame = pygame
+    
+    def RunGame(self):
+        from pygame.locals import QUIT
+        import sys
+        
+        pygame = self.pygame
+         # Assign FPS a value
+        fps = 30
+        FramePerSec = pygame.time.Clock()
+        
         # Beginning Game Loop
         while True:
             pygame.display.update()
