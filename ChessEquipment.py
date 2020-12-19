@@ -31,6 +31,8 @@ class Board:
 
 
         # create board squares
+        exact_board_length = board_length
+        board_length = exact_board_length - (exact_board_length/ (8 + 1))
         square_length = board_length/ (8 + 1)
         square_position1 = square_length
         square_position2 = square_length
